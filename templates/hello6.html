@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+<head>
+    <meta charset='utf-8'>
+    
+    <title>顯示圖片的模版</title>
+    {% load staticfiles %}
+    <link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <img src="{% static "images/ball.png" %}" alt="歡迎光臨" width="32" height="32" />
+
+
+    <div id="home">
+    	  return render(request, "hello6.html" , dict)      ## 樣板用 { {emp_no} }  { {username} }  { {now} } }
+    	  <br>
+  	    <span class="info"> 歡迎光臨： {{emp_no}} {{username}}</span>
+  	    <br>
+        <h2> 現在時刻： {{now}} </h2>
+    </div>   
+    
+    <hr><hr>
+    
+    <div id="home">
+    	  return render(request, "hello6.html" , locals())  ## 樣板用 { {dict.emp_no} } { {dict.username} }  { {dict.now} }  
+    	  <br>
+  	    <span class="info"> 歡迎光臨： {{dict.emp_no}} {{dict.username}}</span>
+  	    <br>
+        <h2> 現在時刻： {{dict.now}} </h2>
+    </div>   
+    
+        
+</body>
+</html>
